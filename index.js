@@ -5,17 +5,16 @@
 // Util 2: https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Global_Objects/Date
 
 const Twit = require("twit");
-//const express = require("express");
+const express = require("express");
 require("dotenv").config();
 
-/*
+
 const app = express();
 const PORT = process.env.PORT || 3030;
 
 app.listen(PORT, () => {
   console.log(`Server initialized on port ${PORT}`);
 })
-*/
 
 const collegeVacation_BH = new Date(2022,01,21);
 const highSchoolVacation_BH = new Date(2022,01,18);
