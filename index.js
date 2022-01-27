@@ -89,8 +89,9 @@ async function postTweet(type, days) {
 }
 
 function writeTweet(type, days){
+  let tweet;
   if(type == 'college'){
-    let tweet = ` 
+    tweet = ` 
 🗓️ (Graduação - Todas as unidades de MG): `;
     if(days > 1){
     tweet += `
@@ -102,7 +103,7 @@ function writeTweet(type, days){
 
 
   } else if (type == 'highSchool') {
-    let tweet = ` 
+    tweet = ` 
 🗓️ (E. Médio-Técnico - Belo Horizonte):`;
     if(days > 1){
       tweet += `
@@ -121,8 +122,9 @@ function writeTweet(type, days){
 }
 
 async function postVacationTweet(type){
+  let tweet;
   if(type == 'college'){
-    let tweet = ` 
+    tweet = ` 
 🗓️ (Graduação - Todas as unidades de MG): `;
     // Tweet de férias GRADUAÇÃO c/ media aqui. (@PabloFLPs)
     tweet += `
@@ -130,7 +132,7 @@ enfim FÉRIAS para graduação do CEFET-MG.`;
   }
 
   if(type == 'highSchool'){
-    let tweet = ` 
+    tweet = ` 
 🗓️ (E. Médio-Técnico - Belo Horizonte):`;
     // Tweet de férias ENSINO MÉDIO c/ media aqui. (@PabloFLPs)
     tweet += `
