@@ -94,7 +94,7 @@ function writeTweet(type, days){
   if(type == 'college'){
     if(days > 1){
     tweet += `
-- Faltam ${days} dias para as férias de graduação do CEFET-MG.`;
+- Faltam ${days} dias para as férias de graduação do CEFET-MG. (${randomNumber()})`;
     } else if (days == 1){
       tweet += `
 - Falta apenas ${days} FUCKING dia para as férias de graduação do CEFET-MG :)`;
@@ -104,7 +104,7 @@ function writeTweet(type, days){
   } else if (type == 'highSchool') {
     if(days > 1){
       tweet += `
-- Faltam ${days} dias para as férias do ensino médio-técnico do CEFET-MG.`;
+- Faltam ${days} dias para as férias do ensino médio-técnico do CEFET-MG. (${randomNumber()})`;
     } else if (days == 1){
       tweet += `
 - Falta apenas ${days} FUCKING dia para as férias do ensino médio-técnico do CEFET-MG :)`;
