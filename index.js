@@ -68,7 +68,7 @@ function main(){
         postVacationTweet(type)
       }
     }
-  }, tweetBetweenTweetMS);
+  }, cdBetweenTweet);
 }
 
 async function postTweet(type, days) {
