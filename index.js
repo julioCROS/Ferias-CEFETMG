@@ -28,7 +28,7 @@ const highSchoolVacation_BH = new Date(2022,01,18);
 // 3600000ms = 1h
 // 600000ms = 10min
 const cooldownUpdate = 600000;
-const cdBetweenTweet = 600000;
+const cdBetweenTweet = 300000;
 
 let collegeVacations = false;
 let highSchoolVacations = false;
