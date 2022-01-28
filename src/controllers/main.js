@@ -1,3 +1,6 @@
+// Calendário graduação em: https://www.dirgrad.cefetmg.br/dirgrad/calendario/
+// Calendário médio-técnico em: https://www.ns.cefetmg.br/calendarios/
+
 // Importing postTweet() controller:
 const postTweet = require("./postTweet.js")
 
