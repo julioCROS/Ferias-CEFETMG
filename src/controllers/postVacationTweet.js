@@ -1,3 +1,8 @@
+// Randomizer:
+function randomNumber(){
+    return Math.floor(Math.random() * 65536) - 32768;
+}
+
 const fs = require('fs')
 const Twit = require("twit");
 
