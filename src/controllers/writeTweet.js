@@ -11,7 +11,7 @@ module.exports = {
             if(days > 1){
                 tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
-- Faltam ${days} dias para as férias de graduação do CEFET-MG. (${randomNumber()})`;
+- Faltam ${days} dias para as férias de graduação do CEFET-MG.`;
             } else if (days == 1){
                 tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
@@ -21,7 +21,7 @@ module.exports = {
             if(days > 1){
                 tweet += `
 🗓️ (E. Médio-Técnico - Belo Horizonte): 
-- Faltam ${days} dias para as férias do ensino médio-técnico do CEFET-MG. (${randomNumber()})`;
+- Faltam ${days} dias para as férias do ensino médio-técnico do CEFET-MG.`;
             } else if (days == 1){
                 tweet += `
 🗓️ (E. Médio-Técnico - Belo Horizonte): 

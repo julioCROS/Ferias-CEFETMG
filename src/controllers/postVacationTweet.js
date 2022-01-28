@@ -27,7 +27,7 @@ module.exports = {
             // Tweet de férias GRADUAÇÃO c/ media aqui. (@PabloFLPs)
             tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
-acabou, acabou, ACABOU. É FÉRIASSS para a graduação 🥳🙏
+acabou, acabou, ACABOU. É FÉRIASSS para a graduação 🥳🙏 ${randomNumber}
 
 bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
 
@@ -68,7 +68,7 @@ bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
 🗓️ (E. Médio-Técnico - Belo Horizonte): 
 enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 🥳🎉🌍
 
-Ótimas férias a todos, #StoneFree  
+Ótimas férias a todos, #StoneFree
 
 - Jourim Kujoh 🏄‍♂️🌊
 
