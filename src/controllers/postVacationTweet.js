@@ -1,6 +1,9 @@
 const fs = require('fs')
 const Twit = require("twit");
 
+// Importing dotenv dependency config:
+require("dotenv").config();
+
 // Creating auth bot:
 const bot = new Twit({
     consumer_key: process.env.CONSUMER_KEY,  

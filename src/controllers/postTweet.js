@@ -1,6 +1,8 @@
 const writeTweet = require("./writeTweet.js")
-
 const Twit = require("twit");
+
+// Importing dotenv dependency config:
+require("dotenv").config();
 
 // Creating auth bot:
 const bot = new Twit({

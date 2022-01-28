@@ -4,12 +4,10 @@ const postTweet = require("./postTweet.js")
 // Importing postVacationTweet() controller:
 const postVacationTweet = require("./postVacationTweet.js")
 
-// Importing dotenv dependency config:
-require("dotenv").config();
-
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2022,01,21);
-const highSchoolVacation_BH = new Date(2022,01,18);
+const collegeVacation_BH = new Date(2022,00,29);
+//01 18
+const highSchoolVacation_BH = new Date(2022,00,28);
 
 // 600000ms = 10min
 // 5400000ms = 1h30
