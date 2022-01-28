@@ -27,7 +27,7 @@ module.exports = {
             // Tweet de férias GRADUAÇÃO c/ media aqui. (@PabloFLPs)
             tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
-acabou, acabou, ACABOU. É FÉRIASSS para a graduação 🥳🙏 ${randomNumber}
+acabou, acabou, ACABOU. É FÉRIASSS para a graduação 🥳🙏
 
 bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
 

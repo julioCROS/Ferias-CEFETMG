@@ -5,7 +5,8 @@ const postTweet = require("./postTweet.js")
 const postVacationTweet = require("./postVacationTweet.js")
 
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2022,00,29);
+//01 21
+const collegeVacation_BH = new Date(2022,00,28);
 //01 18
 const highSchoolVacation_BH = new Date(2022,00,28);
 
