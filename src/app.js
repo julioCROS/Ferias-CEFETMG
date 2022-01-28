@@ -123,7 +123,6 @@ async function postVacationTweet(type){
   if(type == 'college'){
     tweet = ` 
 🗓️ (Graduação - Todas as unidades de MG): `;
-    // Tweet de férias GRADUAÇÃO c/ media aqui. (@PabloFLPs)
     tweet += `
 enfim FÉRIAS para graduação do CEFET-MG.`;
   }
@@ -131,12 +130,10 @@ enfim FÉRIAS para graduação do CEFET-MG.`;
   if(type == 'highSchool'){
     tweet = ` 
 🗓️ (E. Médio-Técnico - Belo Horizonte):`;
-    // Tweet de férias ENSINO MÉDIO c/ media aqui. (@PabloFLPs)
     tweet += `
 enfim FÉRIAS para o ensino médio-técnico do CEFET-MG.`;
   }
 
-  // Ver se é esse mesmo método que posta o tweet com media (@PabloFLPs)
   await bot.post(     
     'statuses/update', 
     {status: tweet},
