@@ -13,11 +13,11 @@ module.exports = {
             if(days > 1){
                 tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
-- Faltam ${days} dias para as férias de graduação do CEFET-MG.`;
+- Faltam ${days} dias para as férias da graduação do CEFET-MG.`;
             } else if (days == 1){
                 tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
-- Falta apenas ${days} FUCKING dia para as férias de graduação do CEFET-MG :)`;
+- Falta apenas ${days} FUCKING dia para as férias da graduação do CEFET-MG :)`;
             }
         } else if (type == 'highSchool') {
             if(days > 1){
