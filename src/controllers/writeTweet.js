@@ -1,7 +1,9 @@
-// Randomizer:
+// Randomizer hashtags:
 function randomNumber(){
-    return Math.floor(Math.random() * 65536) - 32768;
-}
+    return Math.floor(Math.random() * (hashTagsArr.length));
+  }
+
+const hashTagsArr = ['fighting', 'NãoParaNãoParaNãoParaNão', 'precisandoDeFérias', 'hashtag', 'tatakae', 'estudando', 'procrastinando', 'acabaLogoSemestre', 'dor'];
 
 module.exports = {
     write: function writeTweet(type, days){
@@ -31,7 +33,7 @@ module.exports = {
     
         tweet += `
     
-#fighting 🏄🌊`;
+#${hashTagsArr[randomNumber()]} 🏄🌊`;
     
         return tweet;
     }
