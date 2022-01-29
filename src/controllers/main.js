@@ -42,7 +42,7 @@ function get_currDate(){
 // Function to get the number of days to vacation:
 function get_diffDate(targetDate){
     let diffTime = (targetDate - get_currDate());
-    let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
+    let diffDays = Math.floor(diffTime/ (1000 * 3600 * 24)); 
     return diffDays;
 }
 
