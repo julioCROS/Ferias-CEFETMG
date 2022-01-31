@@ -43,7 +43,7 @@ function get_currDate(){
 function get_diffDate(targetDate){
     let diffTime = (targetDate - get_currDate());
     let diffDays = Math.floor(diffTime/ (1000 * 3600 * 24)); 
-    return diffDays + 1;
+    return diffDays;
 }
 
 // Declaring a type for college and highschool vacation types:
