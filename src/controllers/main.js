@@ -36,14 +36,16 @@ function get_currDate(){
     let day = String(curr_date.getDate()).padStart(2, '0');
     let month = String(curr_date.getMonth() + 1).padStart(2, '0');
     let year = curr_date.getFullYear();
-    return curr_date;
+
+    let curr_date_BRT = new Date(curr_date.valueOf() - 10800000);
+    return curr_date_BRT;
 }
 
 // Function to get the number of days to vacation:
 function get_diffDate(targetDate){
-    let diffTime = (targetDate - get_currDate());
-    let diffDays = Math.floor(diffTime/ (1000 * 3600 * 24)); 
-    return diffDays + 1;
+    let diffTime = Math.abs(targetDate - get_currDate());
+    let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
+    return diffDays;
 }
 
 // Declaring a type for college and highschool vacation types:
