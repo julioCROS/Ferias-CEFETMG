@@ -26,10 +26,6 @@ const cdBetweenTweet = 1200000;
 let collegeVacations = false;
 let highSchoolVacations = false;
 
-// Declaring days to vacation:
-let collegeDays = get_diffDate(collegeVacation_BH);
-let highSchoolDays = get_diffDate(highSchoolVacation_BH);
-
 // Function to get current date:
 function get_currDate(){
     let curr_date = new Date();
@@ -53,6 +49,10 @@ let type;
 
 module.exports = {
     post: function main(){
+        // Declaring days to vacation:
+        let collegeDays = get_diffDate(collegeVacation_BH);
+        let highSchoolDays = get_diffDate(highSchoolVacation_BH);
+
         if(!collegeVacations){
             type = 'college';
             if(collegeDays > 0){
