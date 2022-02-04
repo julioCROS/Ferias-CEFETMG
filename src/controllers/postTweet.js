@@ -1,6 +1,9 @@
 const writeTweet = require("./writeTweet.js")
 const Twit = require("twit");
 
+// Importing get_CurrDate() controller:
+const date = require("./date.js")
+
 // Importing dotenv dependency config:
 require("dotenv").config();
 
@@ -25,7 +28,7 @@ module.exports = {
                     console.log(err + " --> " + tweet);                    
                     return false;
                 }
-                console.log(`Tweet do tipo (${type}) postado com sucesso :) `);       
+                console.log(`\n[${date.getCurrDate().getDate()}/${date.getCurrDate().getMonth()}/${date.getCurrDate().getFullYear()} - ${date.getCurrDate().getHours()}:${date.getCurrDate().getMinutes()}:${date.getCurrDate().getSeconds()} GMT-0300 (Horário Padrão de Brasília)] Tweet do tipo (${type}) postado com sucesso -> (${tweet}) `);       
             }
         )
     }

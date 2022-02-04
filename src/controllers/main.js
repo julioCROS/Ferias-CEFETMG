@@ -7,6 +7,9 @@ const postTweet = require("./postTweet.js")
 // Importing postVacationTweet() controller:
 const postVacationTweet = require("./postVacationTweet.js")
 
+// Importing get_CurrDate() controller:
+const date = require("./date.js")
+
 // Setting official college and highschool vacation dates:
 const collegeVacation_BH = new Date(2022,01,21);
 const highSchoolVacation_BH = new Date(2022,01,18);
@@ -26,20 +29,9 @@ const cdBetweenTweet = 1200000;
 let collegeVacations = false;
 let highSchoolVacations = false;
 
-// Function to get current date:
-function get_currDate(){
-    let curr_date = new Date();
-    let day = String(curr_date.getDate()).padStart(2, '0');
-    let month = String(curr_date.getMonth() + 1).padStart(2, '0');
-    let year = curr_date.getFullYear();
-
-    let curr_date_BRT = new Date(curr_date.valueOf() - 10800000);
-    return curr_date_BRT;
-}
-
 // Function to get the number of days to vacation:
 function get_diffDate(targetDate){
-    let diffTime = Math.abs(targetDate - get_currDate());
+    let diffTime = Math.abs(targetDate - date.getCurrDate());
     let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
     return diffDays;
 }
