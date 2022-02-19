@@ -3,8 +3,9 @@ function randomNumber(){
     return Math.floor(Math.random() * 65536) - 32768;
 }
 
-const fs = require('fs')
+const fs = require('fs');
 const Twit = require("twit");
+const path = require('path');
 
 // Importing dotenv dependency config:
 require("dotenv").config();
@@ -33,7 +34,8 @@ bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
 
 #ferias`;
 
-            const content = fs.readFileSync(__dirname + '../../assets/e-tetra-pele.gif', { encoding: 'base64' });
+            const dir_file1 = path.join(__dirname, "../../assets/e-tetra-pele.gif");
+            const content = fs.readFileSync(dir_file1, { encoding: 'base64' });
 
             await bot.post(
                 'media/upload',
@@ -74,7 +76,8 @@ enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 
 
 #ferias`;
 
-            const content = fs.readFileSync(__dirname + '../../assets/freedom-colorful.jpg', { encoding: 'base64' });
+            const dir_file2 = path.join(__dirname, "../../assets/freedom-colorful.jpg");
+            const content = fs.readFileSync(dir_file2, { encoding: 'base64' });
 
             await bot.post(
                 'media/upload',
