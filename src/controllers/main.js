@@ -12,7 +12,7 @@ const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
 const collegeVacation_BH = new Date(2022,01,21);
-const highSchoolVacation_BH = new Date(2022,01,18);
+const highSchoolVacation_BH = new Date(2022,01,19);
 
 // 600000ms = 10min
 // 3600000ms = 1h
@@ -31,7 +31,7 @@ let highSchoolVacations = false;
 
 // Function to get the number of days to vacation:
 function get_diffDate(targetDate){
-    let diffTime = Math.abs(targetDate - date.getCurrDate());
+    let diffTime = targetDate - date.getCurrDate();
     let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
     return diffDays;
 }
