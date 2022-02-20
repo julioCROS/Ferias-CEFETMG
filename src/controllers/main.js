@@ -12,7 +12,7 @@ const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
 const collegeVacation_BH = new Date(2022,01,21);
-const highSchoolVacation_BH = new Date(2022,01,19);
+const highSchoolVacation_BH = new Date(2022,01,21);
 
 // 600000ms = 10min
 // 3600000ms = 1h
