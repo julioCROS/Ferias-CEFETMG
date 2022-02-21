@@ -34,7 +34,7 @@ bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
 
 #ferias`;
 
-            const dir_file1 = path.join(__dirname, "../../assets/e-tetra-pele.gif");
+            const dir_file1 = path.join(__dirname, "../assets/e-tetra-pele.gif");
             const content = fs.readFileSync(dir_file1, { encoding: 'base64' });
 
             await bot.post(
@@ -76,7 +76,7 @@ enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 
 
 #ferias`;
 
-            const dir_file2 = path.join(__dirname, "../../assets/freedom-colorful.jpg");
+            const dir_file2 = path.join(__dirname, "../assets/freedom-colorful.jpg");
             const content = fs.readFileSync(dir_file2, { encoding: 'base64' });
 
             await bot.post(
