@@ -11,16 +11,8 @@ const postVacationTweet = require("./postVacationTweet.js")
 const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2022,01,21);
-const highSchoolVacation_BH = new Date(2022,01,21);
-
-// 600000ms = 10min
-// 3600000ms = 1h
-// 5400000ms = 1h30
-// 39600000ms = 11h
-// 43200000ms = 12h
-// 82800000ms = 23h
-// 86400000ms = 24h
+const collegeVacation_BH = new Date(2022,06,25);
+const highSchoolVacation_BH = new Date(2022,06,25);
 
 // Setting twetting interval:
 const cdBetweenTweet = 1200000;
@@ -44,7 +36,8 @@ module.exports = {
         // Declaring days to vacation:
         let collegeDays = get_diffDate(collegeVacation_BH);
         let highSchoolDays = get_diffDate(highSchoolVacation_BH);
-
+        
+        // Checking if college and highschool vacations are active:
         if(!collegeVacations){
             type = 'college';
             if(collegeDays > 0){

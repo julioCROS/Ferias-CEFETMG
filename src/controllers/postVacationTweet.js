@@ -25,7 +25,6 @@ module.exports = {
         let tweet = ``;
       
         if(type == 'college'){
-            // Tweet de férias GRADUAÇÃO c/ media aqui. (@PabloFLPs)
             tweet += `
 🗓️ (Graduação - Todas as unidades de MG):
 acabou, acabou, ACABOU. É FÉRIASSS para a graduação 🥳🙏
@@ -65,7 +64,6 @@ bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
         }
       
         if(type == 'highSchool'){
-            // Tweet de férias ENSINO MÉDIO c/ media aqui. (@PabloFLPs)
             tweet += `
 🗓️ (E. Médio-Técnico - Belo Horizonte): 
 enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 🥳🎉🌍
