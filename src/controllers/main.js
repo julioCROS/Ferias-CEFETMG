@@ -11,8 +11,8 @@ const postVacationTweet = require("./postVacationTweet.js")
 const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2022,06,25);
-const highSchoolVacation_BH = new Date(2022,06,25);
+const collegeVacation_BH = new Date(2022,12,23);
+const highSchoolVacation_BH = new Date(2022,12,23);
 
 // Setting twetting interval:
 const cdBetweenTweet = 1200000;
