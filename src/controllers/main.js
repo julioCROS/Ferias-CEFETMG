@@ -15,8 +15,8 @@ const collegeVacation_BH = new Date(2023,8,14);
 const highSchoolVacation_BH = new Date(2023,8,14);
 
 // Setting twetting interval (ms):
-const cdBetweenMenuVacationTweet = 60000;
-const cdBetweenVacationsTweet = 120000;
+const cdBetweenMenuVacationTweet = 8400000; // 2 Hours + 20 minutes
+const cdBetweenVacationsTweet = 1200000; // 20 minutes
 
 // Declaring boolean vacation states:
 let collegeVacations = false;
@@ -40,8 +40,6 @@ module.exports = {
 
         type = 'menu'
         postTweet.post(type, 0)
-
-        console.log(" Esperando tempo para postar férias... ", cdBetweenMenuVacationTweet)
         
         // Checking if college and highschool vacations are active:
         setTimeout(function(){

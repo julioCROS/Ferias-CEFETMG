@@ -9,7 +9,7 @@ const app = express();
 const PORT = process.env.PORT || 3030;
 
 app.listen(PORT, () => {
-  console.log(`Server initialized on port ${PORT}`);
+  console.log(`Servidor inicializado na porta: ${PORT}`);
 })
 
 // Setting update interval between main() calling:

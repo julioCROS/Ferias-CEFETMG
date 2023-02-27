@@ -19,11 +19,11 @@ module.exports = {
         if(type == 'college'){
             if(days > 1){
                 tweet += `
-🗓️ (Graduação - Todas as unidades de MG):
+🗓️  (Graduação - Todas as unidades de MG):
 - Faltam ${days} dias para as férias da graduação do CEFET-MG.`;
             } else if (days == 1){
                 tweet += `
-🗓️ (Graduação - Todas as unidades de MG):
+🗓️  (Graduação - Todas as unidades de MG):
 - Falta apenas ${days} FUCKING dia para as férias da graduação do CEFET-MG :)`;
             }
         } 
@@ -31,11 +31,11 @@ module.exports = {
         else if (type == 'highSchool') {
             if(days > 1){
                 tweet += `
-🗓️ (E. Médio-Técnico - Belo Horizonte): 
+🗓️  (E. Médio-Técnico - Belo Horizonte): 
 - Faltam ${days} dias para as férias do ensino médio-técnico do CEFET-MG.`;
             } else if (days == 1){
                 tweet += `
-🗓️ (E. Médio-Técnico - Belo Horizonte): 
+🗓️  (E. Médio-Técnico - Belo Horizonte): 
 - Falta apenas ${days} FUCKING dia para as férias do ensino médio-técnico do CEFET-MG :)`;
             }
         }
@@ -49,7 +49,7 @@ module.exports = {
                 tweet +=  `
                 🤔 Opa, parece que hoje é recesso/feriado então não tem comida no RU. FERIADOU. `
             } else {
-                tweet +=  ` ● Cardápio do dia:
+                tweet +=  `🍲 Cardápio do dia:
 - ${currMenu[4]} e ${currMenu[5]}
 - ${currMenu[0]}
 - ${currMenu[1]}
@@ -63,7 +63,7 @@ module.exports = {
         if(type != 'menu'){
             tweet += `
     
-            #${hashTagsArr[randomNumber()]} 🏄🌊`;
+#${hashTagsArr[randomNumber()]} 🏄🌊`;
         }
     
         return tweet;
