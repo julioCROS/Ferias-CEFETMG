@@ -5,16 +5,20 @@
 const postTweet = require("./postTweet.js")
 
 // Importing postVacationTweet() controller:
-const postVacationTweet = require("./postVacationTweet.js")
+const postImageTweet = require("./postImageTweet.js")
 
 // Importing get_CurrDate() controller:
 const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2023,8,14);
-const highSchoolVacation_BH = new Date(2023,8,14);
+const collegeVacation_BH = new Date(2023,6,14);
+const highSchoolVacation_BH = new Date(2023,6,14);
 
-// Setting twetting interval (ms):
+// Setting official college and highschool start dates:
+const collegeStart_BH = new Date(2023,1,27);
+const highSchoolStart_BH = new Date(2023,1,27);
+
+// Setting twetting interval/cooldown (ms): 8400000 // 1200000
 const cdBetweenMenuVacationTweet = 8400000; // 2 Hours + 20 minutes
 const cdBetweenVacationsTweet = 1200000; // 20 minutes
 
@@ -34,22 +38,27 @@ let type;
 
 module.exports = {
     post: function main(){
+        type = 'menu'
+        postTweet.post(type, 0)
+
         // Declaring days to vacation:
         let collegeDays = get_diffDate(collegeVacation_BH);
         let highSchoolDays = get_diffDate(highSchoolVacation_BH);
+        let collegeFirstDay = get_diffDate(collegeStart_BH) == 0;
+        let highSchoolFirstDay = get_diffDate(highSchoolStart_BH) == 0;
 
-        type = 'menu'
-        postTweet.post(type, 0)
+        console.log(" [MAIN.JS] College Days:", collegeDays)
+        console.log(" [MAIN.JS] HighSchool Days:", highSchoolDays)
         
         // Checking if college and highschool vacations are active:
         setTimeout(function(){
             if(!collegeVacations){
                 type = 'college';
-                if(collegeDays > 0){
-                    postTweet.post(type, collegeDays);
+                if(collegeFirstDay) { postImageTweet.post(type, collegeDays, collegeFirstDay);
+                } else if(collegeDays > 0) { postTweet.post(type, collegeDays);
                 } else if(collegeDays == 0) {
                     collegeVacations = true;
-                    postVacationTweet.post(type)
+                    postImageTweet.post(type, collegeDays, collegeFirstDay);
                 }
             }
         }, cdBetweenMenuVacationTweet);
@@ -57,11 +66,11 @@ module.exports = {
         setTimeout(function(){
             if(!highSchoolVacations){
                 type = 'highSchool';
-                if(highSchoolDays > 0){
-                    postTweet.post(type, highSchoolDays);
+                if(highSchoolFirstDay) { postImageTweet.post(type, highSchoolDays, highSchoolFirstDay);
+                } else if(highSchoolDays > 0) { postTweet.post(type, highSchoolDays);
                 } else if(highSchoolDays == 0) {
                     highSchoolVacations = true;
-                    postVacationTweet.post(type)
+                    postImageTweet.post(type, highSchoolDays, highSchoolFirstDay);
                 }
             }
         }, cdBetweenVacationsTweet);
