@@ -11,11 +11,12 @@ const postVacationTweet = require("./postVacationTweet.js")
 const date = require("./date.js")
 
 // Setting official college and highschool vacation dates:
-const collegeVacation_BH = new Date(2022,11,23);
-const highSchoolVacation_BH = new Date(2022,11,23);
+const collegeVacation_BH = new Date(2023,8,14);
+const highSchoolVacation_BH = new Date(2023,8,14);
 
-// Setting twetting interval:
-const cdBetweenTweet = 1200000;
+// Setting twetting interval (ms):
+const cdBetweenMenuVacationTweet = 60000;
+const cdBetweenVacationsTweet = 120000;
 
 // Declaring boolean vacation states:
 let collegeVacations = false;
@@ -36,17 +37,24 @@ module.exports = {
         // Declaring days to vacation:
         let collegeDays = get_diffDate(collegeVacation_BH);
         let highSchoolDays = get_diffDate(highSchoolVacation_BH);
+
+        type = 'menu'
+        postTweet.post(type, 0)
+
+        console.log(" Esperando tempo para postar férias... ", cdBetweenMenuVacationTweet)
         
         // Checking if college and highschool vacations are active:
-        if(!collegeVacations){
-            type = 'college';
-            if(collegeDays > 0){
-                postTweet.post(type, collegeDays);
-            } else if(collegeDays == 0) {
-                collegeVacations = true;
-                postVacationTweet.post(type)
+        setTimeout(function(){
+            if(!collegeVacations){
+                type = 'college';
+                if(collegeDays > 0){
+                    postTweet.post(type, collegeDays);
+                } else if(collegeDays == 0) {
+                    collegeVacations = true;
+                    postVacationTweet.post(type)
+                }
             }
-        }
+        }, cdBetweenMenuVacationTweet);
       
         setTimeout(function(){
             if(!highSchoolVacations){
@@ -58,6 +66,6 @@ module.exports = {
                     postVacationTweet.post(type)
                 }
             }
-        }, cdBetweenTweet);
+        }, cdBetweenVacationsTweet);
     }
 }

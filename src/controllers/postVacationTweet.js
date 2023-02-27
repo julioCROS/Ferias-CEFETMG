@@ -46,7 +46,6 @@ bom descanso à todos, e até o proximo semestre. 🏄‍♂️🌊
                         return false
                     }
                     console.log('Image uploaded.');
-
                     bot.post(
                         'statuses/update',
                         {status: tweet, media_ids: new Array(data.media_id_string)},
