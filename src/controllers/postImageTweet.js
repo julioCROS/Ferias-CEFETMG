@@ -17,6 +17,8 @@ const bot = new Twit({
 
 const imgFormats = ['gif', 'jpg'];
 const imgQnty = 3;
+let alreadySelected_FirstDay = [];
+let alreadySelected_VacationDay = [];
 
 // Image size must be <= 5242880 bytes (5.2mb)
 function selectRandomImage(){
@@ -27,14 +29,28 @@ function selectRandomImage(){
 
 module.exports = {
     post: async function postImageTweet(type, days, firstDay){ 
-        console.log(" [POST_IMAGE_TWEET.JS] Post Image Tweet function: (type, days, firstDay) -> ", type, days, firstDay)   
+        console.log(" [POST_IMAGE_TWEET.JS] Post Image Tweet function: (type, days, firstDay) -> (" + type + ", " + days + ", " + firstDay + ")");   
         let tweet = writeTweet.write(type, days, firstDay);
         let dir_file = "";
+        let selectedImg = "";
         if(firstDay) {
-            dir_file = path.join(__dirname, "../assets/start/" + selectRandomImage());
+            selectedImg = selectRandomImage();
+            while(alreadySelected_FirstDay.includes(selectedImg)){
+                selectedImg = selectRandomImage();
+            }
+            dir_file = path.join(__dirname, "../assets/start/" + selectedImg);
+            alreadySelected_FirstDay.push(selectedImg);
         } else {
-            dir_file = path.join(__dirname, "../assets/end/" + selectRandomImage());
+            selectedImg = selectRandomImage();
+            while(alreadySelected_VacationDay.includes(selectedImg)){
+                selectedImg = selectRandomImage();
+            }
+            dir_file = path.join(__dirname, "../assets/end/" + selectedImg);
+            alreadySelected_VacationDay.includes(selectedImg)
         }
+        console.log(" [POST_IMAGE_TWEET.JS] Imagem selecionado: " + selectedImg + " (" + type + ") ");
+        console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected First Day: " + alreadySelected_FirstDay);
+        console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected Vacation Day: " + alreadySelected_VacationDay);
         const content = fs.readFileSync(dir_file, { encoding: 'base64' });
         await bot.post(
             'media/upload',

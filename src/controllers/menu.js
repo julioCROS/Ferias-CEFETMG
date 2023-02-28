@@ -87,12 +87,12 @@ module.exports = {
                 if(isHoliday(menu)){
                     return HOLIDAY_CODE;
                 }
-                console.log(" ================================ MENU ================================");
+                console.log(" [MENU.JS] ================================ MENU ================================");
                 for(index = 0; index < 11; index++){
                     menu[index] = textHandle(menu[index]);
                     console.log("   ● " + menu[index]);
                 }
-                console.log(" ======================================================================");
+                console.log(" [MENU.JS] ======================================================================");
             }
         })
 

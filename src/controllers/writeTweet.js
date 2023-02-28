@@ -23,6 +23,7 @@ module.exports = {
 🗓️  (Graduação - Todas as unidades de MG):
 Hmm, alguma hora as férias tinham que acabar né :(
 Recomeçando mais um semestre, bons estudos e boa sorte família.
+
 - Faltam INCRÍVEIS ${days} dias para as férias da graduação do CEFET-MG.`;
             }
             else if(days > 1){
@@ -49,6 +50,7 @@ bom descanso à todos, aproveitem suas férias e até o proximo semestre. 🏄�
 🗓️  (E. Médio-Técnico - Belo Horizonte): 
 Only sad reactions familía, acabou o sossego 💀
 Bora começar mais um semestre cefetinhos. Bons estudos e boa sorte. 
+
 - Faltam INCRÍVEIS ${days} dias para as férias do ensino médio-técnico do CEFET-MG.`;
             }
             else if(days > 1){
