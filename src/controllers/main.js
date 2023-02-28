@@ -15,8 +15,8 @@ const collegeVacation_BH = new Date(2023,6,14);
 const highSchoolVacation_BH = new Date(2023,6,14);
 
 // Setting official college and highschool start dates:
-const collegeStart_BH = new Date(2023,1,27);
-const highSchoolStart_BH = new Date(2023,1,27);
+const collegeStart_BH = new Date(2023,2,3);
+const highSchoolStart_BH = new Date(2023,2,3);
 
 // Setting twetting interval/cooldown (ms): 8400000 // 1200000
 const cdBetweenMenuVacationTweet = 8400000; // 2 Hours + 20 minutes
