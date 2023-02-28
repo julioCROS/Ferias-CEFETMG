@@ -28,7 +28,7 @@ module.exports = {
                     return false;
                 }
                 console.log(`\n[${date.getCurrDate().getDate()}/${date.getCurrDate().getMonth()}/${date.getCurrDate().getFullYear()} - ${date.getCurrDate().getHours()}:${date.getCurrDate().getMinutes()}:${date.getCurrDate().getSeconds()} GMT-0300 (Horário Padrão de Brasília)] Tweet do tipo (${type}) postado com sucesso:
-(${tweet})`);       
+${tweet}`);       
             }
         )
     }

@@ -8,6 +8,7 @@ const menuEmojisArr = ['🍲', '🍔', '🍽️', '☕', '🧆', '🍴', '🍚']
 
 const WEEKEND_CODE = 0;
 const HOLIDAY_CODE = -1;
+const UNDEFINED_CODE = -2;
 
 // Randomizer hashtags:
 function randomNumber(arr){
@@ -85,7 +86,10 @@ enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 
             } else if (currMenu[0] == HOLIDAY_CODE){
                 tweet +=  `
 🤔 Opa, parece que hoje é recesso/feriado então não tem comida no RU. #FERIADOU. `;
-            } else {
+            } else if (currMenu[0] == UNDEFINED_CODE){
+                tweet +=  `
+😬 F familía, parece que não liberaram o cardápio desse mês ainda ou se liberaram tá na hora de me atualizar, alou @julio_CROS @pablo_felps xD`;
+            }else {
                 tweet +=  `${menuEmojisArr[randomNumber(menuEmojisArr)]} Cardápio do dia:
 - ${currMenu[4]} e ${currMenu[5]}
 - ${currMenu[0]}

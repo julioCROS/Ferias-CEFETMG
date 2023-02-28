@@ -6,6 +6,7 @@ const blankRows = [3, 16, 29, 42];
 
 const WEEKEND_CODE = 0;
 const HOLIDAY_CODE = -1;
+const UNDEFINED_CODE = -2;
 
 // Getting current month:
 const months = [
@@ -71,30 +72,44 @@ module.exports = {
             }));
         }
 
-        parseExcel(`./src/menu_files/${currentMonth}.xlsx`).forEach(element => {
+        let excelFile;
+
+        try{
+            excelFile =  parseExcel(`./src/menu_files/${currentMonth}.xlsx`)
+        }catch(e){
+            currentMonth = months[new Date(currentDate).getUTCMonth() - 1]
+            excelFile =  parseExcel(`./src/menu_files/${currentMonth}.xlsx`)
+        }
+        
+        excelFile.forEach(element => {
             currentWeek = parseInt(findCurrentWeek(element.data), 10);
 
             let __EMPTY_NUMBER = "__EMPTY_" + weekDay;
             let rowOffset = blankRows[currentWeek - 1];
-            
+
             if(weekDays[weekDay] == 'Sábado' || weekDays[weekDay] == 'Domingo'){
-                return [WEEKEND_CODE, weekDays[weekDay]];
+                menu = [WEEKEND_CODE, weekDays[weekDay]]
             } else {
                 for(index = 0; index < 11; index++){
-                    menu.push(element.data[rowOffset + index][__EMPTY_NUMBER]);
+                    try{
+                        menu.push(element.data[rowOffset + index][__EMPTY_NUMBER]);
+                    }catch(e){
+                        menu = [UNDEFINED_CODE]
+                    }                    
                 }
                 if(isHoliday(menu)){
-                    return HOLIDAY_CODE;
+                    menu = [HOLIDAY_CODE]
                 }
-                console.log(" [MENU.JS] ================================ MENU ================================");
-                for(index = 0; index < 11; index++){
-                    menu[index] = textHandle(menu[index]);
-                    console.log("   ● " + menu[index]);
+                if(menu[0] != HOLIDAY_CODE && menu[0] != UNDEFINED_CODE){
+                    console.log(" [MENU.JS] ================================ MENU ================================");
+                    for(index = 0; index < 11; index++){
+                        menu[index] = textHandle(menu[index]);
+                        console.log("   ● " + menu[index]);
+                    }
+                    console.log(" [MENU.JS] ======================================================================");
                 }
-                console.log(" [MENU.JS] ======================================================================");
             }
         })
-
         return menu;
     }
 }
