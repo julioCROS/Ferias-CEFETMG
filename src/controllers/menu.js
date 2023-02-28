@@ -37,7 +37,7 @@ const weekDays = [
 // Getting current date
 const date = new Date();
 let timeZone_string = date.toString().split(" ");
-let timeString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + timeZone_string[timeZone_string.length - 2] + " " + timeZone_string[timeZone_string.length - 1];
+let timeString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " (" + timeZone_string[timeZone_string.length - 2] + " " + timeZone_string[timeZone_string.length - 1];
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
