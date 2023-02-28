@@ -74,7 +74,7 @@ module.exports = {
             }));
         }
 
-        parseExcel(`./src/menu_files/Cardápio-${currentMonth}.xlsx`).forEach(element => {
+        parseExcel(`./src/menu_files/${currentMonth}.xlsx`).forEach(element => {
             currentWeek = parseInt(findCurrentWeek(element.data), 10);
 
             let __EMPTY_NUMBER = "__EMPTY_" + weekDay;
