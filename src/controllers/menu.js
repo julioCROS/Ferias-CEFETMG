@@ -60,13 +60,10 @@ module.exports = {
 
         let menu = [];
 
-        // Treating month writing pattern (Ex.: "AGOSTO" to "Agosto"):
-        currentMonth = currentMonth[0] + currentMonth.toLowerCase().slice(1);
-
         // Main method to read our xls/xlsx file:
         const parseExcel = (fileName) => {
             console.log(" [MENU.JS] ======================================================================");
-            console.log(" [MENU.JS] ===== Lendo o arquivo: " + fileName + " ======");
+            console.log(" [MENU.JS] ========= Lendo o arquivo: " + fileName + " ===========");
             const excelData = xlsx.readFile(fileName);
             return Object.keys(excelData.Sheets).map(name => ({
                 name,
