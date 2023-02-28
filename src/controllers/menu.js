@@ -36,6 +36,8 @@ const weekDays = [
 
 // Getting current date
 const date = new Date();
+let timeZone_string = date.toString().split(" ");
+let timeString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " " + timeZone_string[timeZone_string.length - 2] + " " + timeZone_string[timeZone_string.length - 1];
 let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
@@ -45,7 +47,7 @@ let currentDate2find = `${month}/${day}/${year}`;
 let weekDay = new Date(currentDate).getDay();
 let monthDay = new Date(currentDate).getUTCDate();
 let currentMonth = months[new Date(currentDate).getUTCMonth()];
-console.log("\n [MENU.JS] Data de hoje: ", currentDate);
+console.log("\n [MENU.JS] Data de hoje: " + currentDate + " - " + timeString);
 console.log(" [MENU.JS] Dia da semana: " + weekDays[weekDay] + ", " + monthDay + " de " + currentMonth + ".");
 
 module.exports = {
@@ -64,7 +66,7 @@ module.exports = {
         // Main method to read our xls/xlsx file:
         const parseExcel = (fileName) => {
             console.log(" [MENU.JS] ======================================================================");
-            console.log(" [MENU.JS] ========== Lendo o arquivo: " + fileName + " ==========");
+            console.log(" [MENU.JS] ===== Lendo o arquivo: " + fileName + " ======");
             const excelData = xlsx.readFile(fileName);
             return Object.keys(excelData.Sheets).map(name => ({
                 name,
@@ -72,7 +74,7 @@ module.exports = {
             }));
         }
 
-        parseExcel(`./src/menu_files/Cardápio-${currentMonth}.xlsx`).forEach(element => {
+        parseExcel(`../menu_files/Cardápio-${currentMonth}.xlsx`).forEach(element => {
             currentWeek = parseInt(findCurrentWeek(element.data), 10);
 
             let __EMPTY_NUMBER = "__EMPTY_" + weekDay;
