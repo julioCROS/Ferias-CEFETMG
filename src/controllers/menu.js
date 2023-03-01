@@ -132,7 +132,7 @@ function textHandle(text){
   .replace(" proteína", " proteína ").replace(" linguiça", " linguiça ")
   .replace(" cravo", " cravo ").replace(" cheiro", " cheiro ")
   .replace(" orégano", " orégano ").replace(" feijão", " feijão ")
-  .replace(" ervilha", " ervilha ").replace(" acebolado", " acebolado ").replace(" de", " de ")
+  .replace(" ervilha", " ervilha ").replace(" acebolado", " acebolado ")
   .replace(",", ", ").replace(" Acebolado", " Acebolado ").replace(" chapa", " chapa ")
   .replace("  ", " ").replace("  ", " ")
 }
