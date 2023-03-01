@@ -126,13 +126,13 @@ function findCurrentWeek(element){
 }
 
 function textHandle(text){
-  return text.replace(/(\r\n|\n|\r)/gm, " ").replace("ao", "ao ")
+  return text.replace(/(\r\n|\n|\r)/gm, "").replace("ao", "ao ")
   .replace("c/", "c/ ").replace(" em", " em ")
   .replace(" com", " com ").replace(" molho", " molho ")
   .replace(" proteína", " proteína ").replace(" linguiça", " linguiça ")
   .replace(" cravo", " cravo ").replace(" cheiro", " cheiro ")
   .replace(" orégano", " orégano ").replace(" feijão", " feijão ")
-  .replace(" ervilha", " ervilha ").replace(" acebolado", " acebolado ")
+  .replace(" ervilha", " ervilha ").replace(" acebolado", " acebolado ").replace(" de", " de ")
   .replace(",", ", ").replace(" Acebolado", " Acebolado ").replace(" chapa", " chapa ")
   .replace("  ", " ").replace("  ", " ")
 }
