@@ -106,7 +106,7 @@ enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 
     
 #${hashTagsArr[randomNumber(hashTagsArr)]} ${hashTagsEmojisArr[randomNumber(hashTagsEmojisArr)]}`;
         }
-    
+        console.log("\n [WRITE_TWEET.JS] [" + tweet + "] \n");
         return tweet;
     }
 }

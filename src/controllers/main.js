@@ -15,8 +15,8 @@ const collegeVacation_BH = new Date(2023,6,14);
 const highSchoolVacation_BH = new Date(2023,6,14);
 
 // Setting official college and highschool start dates:
-const collegeStart_BH = new Date(2023,2,1);
-const highSchoolStart_BH = new Date(2023,2,1);
+const collegeStart_BH = new Date(2023,2,2);
+const highSchoolStart_BH = new Date(2023,2,2);
 
 // Setting twetting interval/cooldown (ms): 8400000 // 1200000
 const cdBetweenMenuVacationTweet = 8400000; // 2 Hours + 20 minutes
@@ -33,46 +33,57 @@ function get_diffDate(targetDate){
     return diffDays;
 }
 
+// Declaring days to vacation:
+let collegeDays = get_diffDate(collegeVacation_BH);
+let highSchoolDays = get_diffDate(highSchoolVacation_BH);
+let collegeFirstDay = get_diffDate(collegeStart_BH) == 0;
+let highSchoolFirstDay = get_diffDate(highSchoolStart_BH) == 0;
+
 // Declaring a type for college and highschool vacation types:
 let type;
+
+console.log(" [MAIN.JS] Dias para FACULDADE:", collegeDays)
+console.log(" [MAIN.JS] Dias para E. MEDIO:", highSchoolDays)
+console.log(" [MAIN.JS] 1o dia FACULDADE:", collegeFirstDay)
+console.log(" [MAIN.JS] 1o dia E. MEDIO:", highSchoolFirstDay)
 
 module.exports = {
     post: function main(){
         type = 'menu'
         postTweet.post(type, 0)
+        // Calling collegeFunction in "cdBetweenMenuVacationTweet" miliseconds
+        setTimeout(collegeFunction, cdBetweenMenuVacationTweet);
 
-        // Declaring days to vacation:
-        let collegeDays = get_diffDate(collegeVacation_BH);
-        let highSchoolDays = get_diffDate(highSchoolVacation_BH);
-        let collegeFirstDay = get_diffDate(collegeStart_BH) == 0;
-        let highSchoolFirstDay = get_diffDate(highSchoolStart_BH) == 0;
-
-        console.log(" [MAIN.JS] College Days:", collegeDays)
-        console.log(" [MAIN.JS] HighSchool Days:", highSchoolDays)
-        
-        // Checking if college and highschool vacations are active:
-        setTimeout(function(){
+        function collegeFunction(){
             if(!collegeVacations){
                 type = 'college';
-                if(collegeFirstDay) { postImageTweet.post(type, collegeDays, collegeFirstDay);
-                } else if(collegeDays > 0) { postTweet.post(type, collegeDays);
+                let curr_time = new Date();
+                let currentTime = curr_time.getHours() + ":" + curr_time.getMinutes() + ":" + curr_time.getSeconds() 
+                if(collegeFirstDay) { console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em 1o DIA FACULDADE: "); postImageTweet.post(type, collegeDays, collegeFirstDay);
+                } else if(collegeDays > 0) { console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em dia comum FACULDADE: "); postTweet.post(type, collegeDays);
                 } else if(collegeDays == 0) {
+                    console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em FERIAS FACULDADE: ");
                     collegeVacations = true;
                     postImageTweet.post(type, collegeDays, collegeFirstDay);
                 }
             }
-        }, cdBetweenMenuVacationTweet);
-      
-        setTimeout(function(){
+            // Calling collegeFunction in "cdBetweenMenuVacationTweet" miliseconds
+            setTimeout(highSchoolFunction, cdBetweenVacationsTweet); 
+        }
+
+        function highSchoolFunction() {
             if(!highSchoolVacations){
                 type = 'highSchool';
-                if(highSchoolFirstDay) { postImageTweet.post(type, highSchoolDays, highSchoolFirstDay);
-                } else if(highSchoolDays > 0) { postTweet.post(type, highSchoolDays);
+                let curr_time = new Date();
+                let currentTime = curr_time.getHours() + ":" + curr_time.getMinutes() + ":" + curr_time.getSeconds() 
+                if(highSchoolFirstDay) { console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em 1o DIA E. MEDIO: "); postImageTweet.post(type, highSchoolDays, highSchoolFirstDay);
+                } else if(highSchoolDays > 0) { console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em dia comum E. MEDIO: "); postTweet.post(type, highSchoolDays);
                 } else if(highSchoolDays == 0) {
+                    console.log("\n [" + currentTime + "] === [MAIN.JS] Entrando em FERIAS E. MEDIO: ");
                     highSchoolVacations = true;
                     postImageTweet.post(type, highSchoolDays, highSchoolFirstDay);
                 }
             }
-        }, cdBetweenVacationsTweet);
+        }  
     }
 }

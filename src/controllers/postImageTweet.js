@@ -29,7 +29,7 @@ function selectRandomImage(){
 
 module.exports = {
     post: async function postImageTweet(type, days, firstDay){ 
-        console.log(" [POST_IMAGE_TWEET.JS] Post Image Tweet function: (type, days, firstDay) -> (" + type + ", " + days + ", " + firstDay + ")");   
+        console.log(" [POST_IMAGE_TWEET.JS] Post Image Tweet function: [type, days, firstDay] -> [" + type + ", " + days + ", " + firstDay + "]");   
         let tweet = writeTweet.write(type, days, firstDay);
         let dir_file = "";
         let selectedImg = "";
@@ -50,9 +50,9 @@ module.exports = {
         }
         console.log(" [POST_IMAGE_TWEET.JS] Imagem selecionado: " + selectedImg + " (" + type + ") ");
         console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected First Day: " + alreadySelected_FirstDay);
-        console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected Vacation Day: " + alreadySelected_VacationDay);
+        console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected Vacation Day: " + alreadySelected_VacationDay + "\n");
         const content = fs.readFileSync(dir_file, { encoding: 'base64' });
-        await bot.post(
+        /*await bot.post(
             'media/upload',
             { media_data: content },
             function (err, data, response) {
@@ -74,6 +74,6 @@ module.exports = {
                     }
                 )
             }
-        )
+        )*/
     }    
 }

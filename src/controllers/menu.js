@@ -12,7 +12,7 @@ const UNDEFINED_CODE = -2;
 const months = [
     "JANEIRO",
     "FEVEREIRO",
-    "MARÇO",
+    "MARCO",
     "ABRIL",
     "MAIO",
     "JUNHO",
@@ -28,7 +28,7 @@ const months = [
 const weekDays = [
     "Domingo",
     "Segunda-feira",
-    "Terçã-feira",
+    "Terça-feira",
     "Quarta-feira",
     "Quinta-feira",
     "Sexta-feira",
@@ -43,7 +43,7 @@ let day = date.getDate();
 let month = date.getMonth() + 1;
 let year = date.getFullYear();
 let currentDate = `${year}-${month}-${day}`;
-let currentDate2find = `${month}/${day}/${year}`;
+let currentDate2find = `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
 
 let weekDay = new Date(currentDate).getDay();
 let monthDay = new Date(currentDate).getUTCDate();
@@ -126,23 +126,23 @@ function findCurrentWeek(element){
 }
 
 function textHandle(text){
-  return text.replace(/(\r\n|\n|\r)/gm, "").replace("ao", "ao ")
-  .replace("c/", "c/ ").replace(" em", " em ")
-  .replace(" com", " com ").replace(" molho", " molho ")
-  .replace(" proteína", " proteína ").replace(" linguiça", " linguiça ")
-  .replace(" cravo", " cravo ").replace(" cheiro", " cheiro ")
-  .replace(" orégano", " orégano ").replace(" feijão", " feijão ")
-  .replace(" ervilha", " ervilha ").replace(" acebolado", " acebolado ")
-  .replace(",", ", ").replace(" Acebolado", " Acebolado ").replace(" chapa", " chapa ")
-  .replace("  ", " ").replace("  ", " ")
+  return text.replace(/(\r\n|\n|\r)/gm, " ")
 }
 
 function isHoliday(menu){
     let isHoliday = 0;
     for(index = 0; index < menu.length; index++){
+
         if(typeof(menu[index]) == typeof(undefined)) isHoliday++;
     }
     if(isHoliday >= 10) return true;
     return false;
+}
+
+function addZeroToDate(date){
+    if(parseInt(date) < 10){
+        date = "0" + date;
+    }
+    return date;
 }
 
