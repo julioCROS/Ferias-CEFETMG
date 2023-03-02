@@ -52,7 +52,7 @@ module.exports = {
         console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected First Day: " + alreadySelected_FirstDay);
         console.log(" ====== [POST_IMAGE_TWEET.JS] Already Selected Vacation Day: " + alreadySelected_VacationDay + "\n");
         const content = fs.readFileSync(dir_file, { encoding: 'base64' });
-        /*await bot.post(
+        await bot.post(
             'media/upload',
             { media_data: content },
             function (err, data, response) {
@@ -74,6 +74,6 @@ module.exports = {
                     }
                 )
             }
-        )*/
+        )
     }    
 }

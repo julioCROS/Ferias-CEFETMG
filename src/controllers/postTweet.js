@@ -19,16 +19,16 @@ const bot = new Twit({
 module.exports = {
     post: async function postTweet(type, days) {
         let tweet = writeTweet.write(type, days, false);
-        /*await bot.post(     
+        await bot.post(     
             'statuses/update', 
             {status: tweet},
             function(err, data, response) { 
                 if (err) {
-                    console.log(' [POST_TWEET.JS] ' + err + ");                    
+                    console.log(' [POST_TWEET.JS] ' + err);                    
                     return false;
                 }
                 console.log(`\n[${date.getCurrDate().getDate()}/${date.getCurrDate().getMonth()}/${date.getCurrDate().getFullYear()} - ${date.getCurrDate().getHours()}:${date.getCurrDate().getMinutes()}:${date.getCurrDate().getSeconds()} GMT-0300 (Horário Padrão de Brasília)] Tweet do tipo (${type}) postado com sucesso.`);       
             }
-        )*/
+        )
     }
 }
