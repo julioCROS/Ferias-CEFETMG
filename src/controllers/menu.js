@@ -35,22 +35,6 @@ const weekDays = [
     "Sábado"
 ];
 
-// Getting current date
-const date = new Date();
-let timeZone_string = date.toString().split(" ");
-let timeString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " (" + timeZone_string[timeZone_string.length - 2] + " " + timeZone_string[timeZone_string.length - 1];
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
-let currentDate = `${year}-${month}-${day}`;
-let currentDate2find = `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
-
-let weekDay = new Date(currentDate).getDay();
-let monthDay = new Date(currentDate).getUTCDate();
-let currentMonth = months[new Date(currentDate).getUTCMonth()];
-console.log("\n [MENU.JS] Data de hoje: " + currentDate + " - " + timeString);
-console.log(" [MENU.JS] Dia da semana: " + weekDays[weekDay] + ", " + monthDay + " de " + currentMonth + ".");
-
 module.exports = {
     getCurrMenu: function get_CurrMenu(){
         // Variable to set the menu
@@ -60,6 +44,22 @@ module.exports = {
         // 3 -> Guarnição                 8 -> Salada 2
 
         let menu = [];
+
+        // Getting current date
+        const date = new Date();
+        let timeZone_string = date.toString().split(" ");
+        let timeString = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + " (" + timeZone_string[timeZone_string.length - 2] + " " + timeZone_string[timeZone_string.length - 1];
+        let day = date.getDate();
+        let month = date.getMonth() + 1;
+        let year = date.getFullYear();
+        let currentDate = `${year}-${month}-${day}`;
+        let currentDate2find = `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
+
+        let weekDay = new Date(currentDate).getDay();
+        let monthDay = new Date(currentDate).getUTCDate();
+        let currentMonth = months[new Date(currentDate).getUTCMonth()];
+        console.log("\n [MENU.JS] Data de hoje: " + currentDate + " - " + timeString);
+        console.log(" [MENU.JS] Dia da semana: " + weekDays[weekDay] + ", " + monthDay + " de " + currentMonth + ".");
 
         // Main method to read our xls/xlsx file:
         const parseExcel = (fileName) => {
