@@ -82,7 +82,7 @@ module.exports = {
         }
         
         excelFile.forEach(element => {
-            currentWeek = parseInt(findCurrentWeek(element.data), 10);
+            currentWeek = parseInt(findCurrentWeek(element.data, currentDate2find), 10);
 
             let __EMPTY_NUMBER = "__EMPTY_" + weekDay;
             let rowOffset = blankRows[currentWeek - 1];
