@@ -26,34 +26,34 @@ const cdBetweenVacationsTweet = 1200000; // 20 minutes
 let collegeVacations = false;
 let highSchoolVacations = false;
 
-// Function to get the number of days to vacation:
-function get_diffDate(targetDate){
-    let diffTime = targetDate - date.getCurrDate();
-    let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
-    return diffDays;
-}
-
-// Declaring days to vacation:
-let collegeDays = get_diffDate(collegeVacation_BH);
-let highSchoolDays = get_diffDate(highSchoolVacation_BH);
-let collegeFirstDay = get_diffDate(collegeStart_BH) == 0;
-let highSchoolFirstDay = get_diffDate(highSchoolStart_BH) == 0;
-
-// Declaring a type for college and highschool vacation types:
-let type;
-
-console.log(" [MAIN.JS] Dias para FACULDADE:", collegeDays)
-console.log(" [MAIN.JS] Dias para E. MEDIO:", highSchoolDays)
-console.log(" [MAIN.JS] 1o dia FACULDADE:", collegeFirstDay)
-console.log(" [MAIN.JS] 1o dia E. MEDIO:", highSchoolFirstDay)
-
 module.exports = {
     post: function main(){
+        // Function to get the number of days to vacation:
+        function get_diffDate(targetDate){
+            let diffTime = targetDate - date.getCurrDate();
+            let diffDays = Math.ceil(diffTime/ (1000 * 3600 * 24)); 
+            return diffDays;
+        }
+
+        // Declaring days to vacation:
+        let collegeDays = get_diffDate(collegeVacation_BH);
+        let highSchoolDays = get_diffDate(highSchoolVacation_BH);
+        let collegeFirstDay = get_diffDate(collegeStart_BH) == 0;
+        let highSchoolFirstDay = get_diffDate(highSchoolStart_BH) == 0;
+
+        // Declaring a type for college and highschool vacation types:
+        let type;
+
+        console.log(" [MAIN.JS] Dias para FACULDADE:", collegeDays)
+        console.log(" [MAIN.JS] Dias para E. MEDIO:", highSchoolDays)
+        console.log(" [MAIN.JS] 1o dia FACULDADE:", collegeFirstDay)
+        console.log(" [MAIN.JS] 1o dia E. MEDIO:", highSchoolFirstDay)
+
         type = 'menu'
         postTweet.post(type, 0)
         // Calling collegeFunction in "cdBetweenMenuVacationTweet" miliseconds
         setTimeout(collegeFunction, cdBetweenMenuVacationTweet);
-
+        
         function collegeFunction(){
             if(!collegeVacations){
                 type = 'college';

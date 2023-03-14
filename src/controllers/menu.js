@@ -114,7 +114,7 @@ module.exports = {
     }
 }
 
-function findCurrentWeek(element){
+function findCurrentWeek(element, currentDate2find){
   for(j = 0; j < 4; j++){
       for(index = 1; index < 7; index++){
           if(element[weekdaysXlsx[j]]["__EMPTY_" + index] == currentDate2find){
@@ -132,7 +132,6 @@ function textHandle(text){
 function isHoliday(menu){
     let isHoliday = 0;
     for(index = 0; index < menu.length; index++){
-
         if(typeof(menu[index]) == typeof(undefined)) isHoliday++;
     }
     if(isHoliday >= 10) return true;
@@ -140,9 +139,7 @@ function isHoliday(menu){
 }
 
 function addZeroToDate(date){
-    if(parseInt(date) < 10){
-        date = "0" + date;
-    }
+    if(parseInt(date) < 10) date = "0" + date;
     return date;
 }
 
