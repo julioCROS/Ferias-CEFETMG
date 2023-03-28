@@ -88,7 +88,7 @@ enfim LIBERDADE desse Oceano de Pedras para a galera do ensino médio-técnico! 
 🤔 Opa, parece que hoje é recesso/feriado então não tem comida no RU. #FERIADOU. `;
             } else if (currMenu[0] == UNDEFINED_CODE){
                 tweet +=  `
-😬 F familía, parece que não liberaram o cardápio desse mês ainda ou se liberaram tá na hora de me atualizar, alou @julio_CROS @pablo_felps xD`;
+😬 F familía, parece que não liberaram o cardápio desse mês ainda ou se liberaram deu algum erro aqui, alou @julio_CROS @pablo_felps xD`;
             }else {
                 tweet +=  `${menuEmojisArr[randomNumber(menuEmojisArr)]} Cardápio do dia:
 - ${currMenu[4]} e ${currMenu[5]}

@@ -1,8 +1,8 @@
 // Importing 'xlsx' to read xls/xlsx files:
 const xlsx = require('xlsx');
 
-const weekdaysXlsx = [2, 15, 28, 41];
-const blankRows = [3, 16, 29, 42];
+const weekdaysXlsx = [2, 15, 28, 41, 54];
+const blankRows = [3, 16, 29, 42, 55];
 
 const WEEKEND_CODE = 0;
 const HOLIDAY_CODE = -1;
@@ -115,7 +115,7 @@ module.exports = {
 }
 
 function findCurrentWeek(element, currentDate2find){
-  for(j = 0; j < 4; j++){
+  for(j = 0; j < weekdaysXlsx.length; j++){
       for(index = 1; index < 7; index++){
           if(element[weekdaysXlsx[j]]["__EMPTY_" + index] == currentDate2find){
               currentWeek = element[weekdaysXlsx[j] - 1]["__EMPTY"].replace("SEMANA ", "");
