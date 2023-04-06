@@ -1,8 +1,8 @@
 // Importing 'xlsx' to read xls/xlsx files:
 const xlsx = require('xlsx');
 
-const weekdaysXlsx = [2, 15, 28, 41, 54];
-const blankRows = [3, 16, 29, 42, 55];
+const weekdaysXlsx = [2, 15, 28, 41];
+const blankRows = [3, 16, 29, 42];
 
 const WEEKEND_CODE = 0;
 const HOLIDAY_CODE = -1;
@@ -53,7 +53,7 @@ module.exports = {
         let month = date.getMonth() + 1;
         let year = date.getFullYear();
         let currentDate = `${year}-${month}-${day}`;
-        let currentDate2find = `${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
+        let currentDate2find = `/${addZeroToDate(day)}/${addZeroToDate(month)}/${year}`;
 
         let weekDay = new Date(currentDate).getDay();
         let monthDay = new Date(currentDate).getUTCDate();
@@ -115,6 +115,7 @@ module.exports = {
 }
 
 function findCurrentWeek(element, currentDate2find){
+    console.log(element)
   for(j = 0; j < weekdaysXlsx.length; j++){
       for(index = 1; index < 7; index++){
           if(element[weekdaysXlsx[j]]["__EMPTY_" + index] == currentDate2find){
