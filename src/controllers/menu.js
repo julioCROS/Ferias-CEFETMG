@@ -115,7 +115,6 @@ module.exports = {
 }
 
 function findCurrentWeek(element, currentDate2find){
-    console.log(element)
   for(j = 0; j < weekdaysXlsx.length; j++){
       for(index = 1; index < 7; index++){
           if(element[weekdaysXlsx[j]]["__EMPTY_" + index] == currentDate2find){
