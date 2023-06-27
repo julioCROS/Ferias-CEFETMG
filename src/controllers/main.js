@@ -49,8 +49,8 @@ module.exports = {
         console.log(" [MAIN.JS] 1o dia FACULDADE:", collegeFirstDay)
         console.log(" [MAIN.JS] 1o dia E. MEDIO:", highSchoolFirstDay)
 
-        type = 'menu'
-        postTweet.post(type, 0)
+        //type = 'menu'
+        //postTweet.post(type, 0)
         // Calling collegeFunction in "cdBetweenMenuVacationTweet" miliseconds
         setTimeout(collegeFunction, cdBetweenMenuVacationTweet);
         
