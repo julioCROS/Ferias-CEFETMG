@@ -52,7 +52,9 @@ module.exports = {
         //type = 'menu'
         //postTweet.post(type, 0)
         // Calling collegeFunction in "cdBetweenMenuVacationTweet" miliseconds
-        setTimeout(collegeFunction, cdBetweenMenuVacationTweet);
+        //setTimeout(collegeFunction, cdBetweenMenuVacationTweet);
+
+        collegeFunction();
         
         function collegeFunction(){
             if(!collegeVacations){
